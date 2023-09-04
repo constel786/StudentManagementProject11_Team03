@@ -1,0 +1,127 @@
+--Selenium Grid--
+
+Official Documentation:  https://www.selenium.dev/documentation/grid/
+1. Prerequisites:
+Java 11 or higher
+Browser(s) installed
+Browser driver(s)
+Selenium Server jar file
+
+2. Create directory: SeleniumServer
+
+3. Downloads:
+Download Selenium server: https://github.com/SeleniumHQ/selenium/releases/tag/selenium-4.11.0
+Download Chrome driver: https://chromedriver.chromium.org/downloads
+Download Gecko driver: https://github.com/mozilla/geckodriver/releases
+Download Edge driver: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+Move all of these into SeleniumServer directory
+
+4. Open Terminal on IntelliJ and navigate to SeleniumServer directory: cd SeleniumServer
+*ls: List of sub folders and files
+*cls: clear terminal
+*cd SeleniumServer: Change Directory to C:\Users\TechProEd\Desktop\Selenium 159-160\CucumberDT\SeleniumServer
+*cd .. :Change Directory to one step back
+
+5. Run the grid standalone server on terminal
+*java -jar selenium-server-4.11.0.jar standalone
+You should see " Started Selenium Standalone 4.11.0"
+*To cancel the server: control + c
+*To run server again: java -jar selenium-server-4.11.0.jar standalone
+
+6. Create feature file:
+@grid
+Feature: grid_feature
+
+  Scenario: TC01_chrome_test_case
+    Given user navigates to "https://techproeducation.com/" by using "chrome" browser
+    Then verify title contains "TechPro Education"
+    And close the remote driver
+
+7. Create GridRunner class:
+package runners;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        plugin = {
+                "pretty",
+                "html:target/default-cucumber-reports.html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml",
+                "rerun:target/failedRerun.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
+        monochrome = false,
+        features = "./src/test/resources/features",
+        glue = {"stepdefinitions","hooks"},
+        tags = "@grid",
+        dryRun = true
+)
+public class GridRunner {
+}
+
+8. Create Step Definitions class:
+package stepdefinitions;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class GridStepDefs {
+    @Given("user navigates to {string} by using {string} browser")
+    public void user_navigates_to_by_using_browser(String url, String browser) {
+    }
+    @Then("verify title contains {string}")
+    public void verify_title_contains(String string) {
+    }
+    @Then("close the remote driver")
+    public void close_the_remote_driver() {
+    }
+}
+
+9. Complete Step Definitions
+The only difference between Selenium WebDriver and Selenium Grid is RemoteWebDriver.
+Rest is same. That means we create the remote driver by using Selenium server.
+
+----------------
+What is Selenium Grid?
+    Grid is one of the selenium components.(Selenium WebDriver, Selenium IDE, Selenium RC)
+What is it used for?
+    It is used for running test cases.
+    1. On Remote Web Driver
+    2. Cross-Browser testing (chrome-edge-firefox-safari)
+    3. Parallel testing(Framework must be configured for parallel testing)
+    4. Different operating systems(Windows, MAC, Linux ...)
+
+Did you use Selenium Grid?
+    Yes, I used Selenium Grid for cross-browser testing
+
+How do you run your test case on Grid?
+    1. I have Selenium Server and Drivers in my project, I run Selenium Server in Standalone mode and execute my test cases with RemoteWebDriver.
+    2. Actually there some options to run tests on Grid like (Standalone, Hub and Node, Distributed Node)
+
+What is Hub?
+    Hub is a server that manages the nodes. We have only one Hub.
+
+What is Node?
+    Node is a remote machine that Hub controls. There can be multiple Nodes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
