@@ -13,8 +13,6 @@ import static utilities.MediaUtils.takeScreenshotOfTheEntirePageAsString;
 
 
 public class ExtentReportUtils {
-
-
     protected static ExtentReports extentReports;
     protected static ExtentSparkReporter extentSparkReporter;
     protected static ExtentTest extentTest;
