@@ -16,7 +16,7 @@ Feature:Teacher not select "choose lesson"
     And entered Absentee 5
     And entered Midterm Exam 50
     And entered Final Exam 40
-    And entered Info Note must be better
+    And entered Info Note "must be better"
     And click on Submit button
     Then Verify "Please select session" message
     And close the page

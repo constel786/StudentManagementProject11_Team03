@@ -26,7 +26,6 @@ public class StudentInfoManagementStepDefs {
       protected static ExtentSparkReporter extentSparkReporter;
       protected static ExtentTest extentTest;
 
-
     @When("teacher must be logged website")
     public void teacher_must_be_logged_website() {
         managementonSchoolHomePage.login.click();
@@ -105,9 +104,7 @@ public class StudentInfoManagementStepDefs {
     public void verify(String message) {
      //  assertTrue(studentInfoManagementPage.successMessage.getText().contains("Student Info saved Successfully"));
         WaitUtils.waitFor(1);
-
     }
-
     @When("not select Lesson")
     public void not_select_lesson() {
     }
@@ -124,17 +121,17 @@ public class StudentInfoManagementStepDefs {
     }
     @When("entered Absentee {int}")
     public void entered_absentee(Integer int1) {
-        studentInfoManagementPage.absentee.sendKeys("5" + Keys.ENTER);
+        studentInfoManagementPage.absentee.sendKeys("1" + Keys.ENTER);
         WaitUtils.waitFor(1);
     }
     @When("entered Midterm Exam {int}")
     public void entered_midterm_exam(Integer int1) {
-        studentInfoManagementPage.midtermExam.sendKeys("50"+ Keys.ENTER);
+        studentInfoManagementPage.midtermExam.sendKeys("90"+ Keys.ENTER);
         WaitUtils.waitFor(1);
     }
     @When("entered Final Exam {int}")
     public void entered_final_exam(Integer int1) {
-        studentInfoManagementPage.finalExam.sendKeys("40"+ Keys.ENTER);
+        studentInfoManagementPage.finalExam.sendKeys("95"+ Keys.ENTER);
         WaitUtils.waitFor(1);
     }
     @When("entered Info Note must be better")
@@ -146,6 +143,37 @@ public class StudentInfoManagementStepDefs {
     public void verify_message(String string) {
         //   assertTrue();
     }
+    @When("select Selenium")
+    public void select_selenium() {
+        studentInfoManagementPage.chooseLesson.sendKeys("Selenium" + Keys.ENTER);
+        WaitUtils.waitFor(1);
+    }
+    @When("select Bruce Lee")
+    public void select_bruce_lee() {
+        studentInfoManagementPage.chooseStudent.sendKeys("Bruce Lee" + Keys.ENTER);
+        WaitUtils.waitFor(1);
+    }
+    @When("not select choose education term")
+    public void not_select_choose_education_term() {
+    }
+    @When("select Jessie Pinkman")
+    public void select_jessie_pinkman() {
+        studentInfoManagementPage.chooseStudent.sendKeys("Jessie Pinkman" + Keys.ENTER);
+        WaitUtils.waitFor(1);
+    }
+    @When("select FALL_SEMESTER")
+    public void select_fall_semester() {
+        studentInfoManagementPage.chooseEducationTerm.sendKeys("FALL_SEMESTER" +Keys.ENTER);
+        WaitUtils.waitFor(1);
+    }
+    @When("not entered Absentee")
+    public void not_entered_absentee() {}
+    @When("not entered Midterm Exam")
+    public void not_entered_midterm_exam() {}
+    @When("not entered Final Exam")
+    public void not_entered_final_exam() {}
+    @When("not entered Info Note")
+    public void not_entered_ınfo_note() {
 
-
+    }
 }
