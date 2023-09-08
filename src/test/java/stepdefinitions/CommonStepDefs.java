@@ -11,7 +11,7 @@ public class CommonStepDefs {
     public void close_the_page (){
         Driver.closeDriver();}
     @Given("teacher navigates to {string}")
-    public void userNavigatesTo(String url) {
+    //public void userNavigatesTo(String url) {
         Driver.getDriver().get(url);
     }
 
