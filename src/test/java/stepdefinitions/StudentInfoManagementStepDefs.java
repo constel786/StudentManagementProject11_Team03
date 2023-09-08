@@ -173,7 +173,7 @@ public class StudentInfoManagementStepDefs {
     @When("not entered Final Exam")
     public void not_entered_final_exam() {}
     @When("not entered Info Note")
-    public void not_entered_ınfo_note() {
+    //public void not_entered_ınfo_note() {
 
     }
 }
