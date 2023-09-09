@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.Add_Admin_Page;
+import utilities.BrowserUtils;
 import utilities.Driver;
 
 public class Add_Admin_StepDef {
@@ -118,5 +119,17 @@ public class Add_Admin_StepDef {
     @Then("Verify that user received NUMBER required notification under the Password field")
     public void verifyThatUserReceivedNUMBERRequiredNotificationUnderThePasswordField() {
         Assert.assertEquals(addAdminPage.PASSWORD_INVALID_FEEDBACK.getText(), "One number");
+    }
+
+    @Then("Verify that user received saved notification pop up")
+    public void verifyThatUserReceivedSavedNotificationPopUp() throws InterruptedException {
+        Thread.sleep(1000);
+        Assert.assertTrue(addAdminPage.SAVED_FEEDBACK.isDisplayed());
+    }
+
+    @Then("Verify that user received invalid notification pop up")
+    public void verifyThatUserReceivedInvalidNotificationPopUp() throws InterruptedException {
+        Thread.sleep(1000);
+        Assert.assertTrue(addAdminPage.SSN_INVALID_NOTIFICATION.isDisplayed());
     }
 }

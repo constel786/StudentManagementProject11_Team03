@@ -74,4 +74,9 @@ public class Add_Admin_Page {
         @FindBy(xpath = "//input[@placeholder='Password']/following-sibling::div")
         public WebElement PASSWORD_INVALID_FEEDBACK;
 
+        @FindBy(xpath = "//*[text()='Admin Saved']")
+        public WebElement SAVED_FEEDBACK;
+
+        @FindBy(xpath = "//*[text()='Please enter valid SSN number']")
+        public WebElement SSN_INVALID_NOTIFICATION;
 }

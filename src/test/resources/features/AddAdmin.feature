@@ -135,7 +135,7 @@ Feature: Add Admin Functions
     And Click the SUBMIT button
     Then Verify that user received required notification under the password field
 
-  @TC10 #SAVED NOTİFİCATION OLMADI
+  @TC10
   Scenario: User must be able to enter valid data in all field
     Given user login
     When Enter "Jasmine" in the name field
@@ -150,7 +150,7 @@ Feature: Add Admin Functions
     And Click the SUBMIT button
     Then Verify that user received saved notification pop up
 
-  @TC11 #pop-up çok hızlı
+  @TC11
   Scenario: User must be able to enter "Ssn" must contain a "-" after the 3rd and 5th digits and must consist of 9 digits in total and user can not be left blank
     Given user login
     When Enter "Jasmine" in the name field
