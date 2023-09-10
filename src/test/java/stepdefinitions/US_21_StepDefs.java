@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import com.mongodb.client.model.geojson.LineString;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
@@ -87,7 +88,7 @@ public class US_21_StepDefs {
     @Given("student unselects a lesson")
     public void student_unselects_a_lesson() {
 
-
+        Driver.getDriver().navigate().refresh();
 
     }
     @Then("verify the courses are added to the list")
@@ -147,6 +148,13 @@ public class US_21_StepDefs {
     @Then("verify the visibility of meetings")
     public void verify_the_visibility_of_meetings() {
         assertTrue(gradesAnnouncementsPage.meetList.isDisplayed());
+
+    }
+
+    @And("student selects a simultaneous {string}")
+    public void studentSelectsASimultaneous(String arg0, String arg1) {
+
+        Driver.getDriver().findElement();
 
     }
 }
