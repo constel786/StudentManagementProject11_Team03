@@ -15,10 +15,13 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        features = "./src/test/resources/features",
-        glue = "stepdefinitions",
-        tags = "@us09tc02",
-        dryRun = false
+
+        monochrome = true,//makes reports more readable in the console
+        features = "src/test/resources/features",//path of feature file
+        glue = "stepdefinitions" ,//path of the step definitions
+        tags = "@US22",
+        dryRun = false //executes to generate missing step definitions
+
 )
 public class Runner {
 }
