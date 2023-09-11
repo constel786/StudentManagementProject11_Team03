@@ -4,7 +4,7 @@ Feature:Teacher not select "choose lesson"
     Given teacher navigates to "https://managementonschools.com"
     When  teacher must be logged website
 
-  Scenario:US_17_TC_02_add_student_info_not_select_choose_lesson
+    Scenario:US_17_TC_02_add_student_info_not_select_choose_lesson
     When teacher click on menu
     And teacher click to Student Info Management
     And go to Choose Lesson

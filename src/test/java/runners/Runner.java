@@ -19,7 +19,8 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features",//path of feature file
         glue = "stepdefinitions", //path of the step definitions
         tags = "@us_21",
-        dryRun = true //executes to generate missing step definitions
+
+        dryRun = false //executes to generate missing step definitions
 )
 public class Runner {
 }
