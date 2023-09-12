@@ -33,6 +33,9 @@ public class ChooseLessonPage {
     @FindBy(xpath = "//*[.='Choose Lesson Management']")
     public WebElement chooseLessonTitle;
 
+    @FindBy(xpath = "//*[.='Error: Course schedule cannot be selected for the same hour and day']")
+    public WebElement simulatenousLessonsError;
+
 
 
 }

@@ -32,20 +32,22 @@
       Scenario Outline: forbidding the selection of simultaneous courses
       And student selects lesson1 "<lesson>"
       And student clicks the submit button
-      And student unselects a lesson
+      And student unselects lesson1
       And student selects a simultaneous lesson2 "<lesson2>"
       And student clicks the submit button
-      Then verify the notification of denial
+      Then simultaneous courses alert
       Then close the application
       Examples:
         | lesson | lesson2 |
-        | 3      | 148     |
+        | 113    | 265     |
 
-      @us21_tc_05
+
+
+    @us21_tc_05
       Scenario: denial of the selection of multiple courses
       And student selects multiple simultaneous "lessons"
       And student clicks the submit button
-      Then verify the notification of denial
+      Then simultaneous courses alert
       Then close the application
 
       @us21_tc_07

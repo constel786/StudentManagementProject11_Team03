@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class GradesAnnouncementsPage {
 
-    public void gradesAnnouncements(){
+    public GradesAnnouncementsPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

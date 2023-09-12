@@ -41,13 +41,13 @@ public class US_21_StepDefs {
     @Given("enter username {string}")
     public void enter_username(String string) {
 
-        managementonSchoolHomePage.userNameLogin.sendKeys("JessiePinkman2");
+        managementonSchoolHomePage.userNameLogin.sendKeys("Ash98");
 
     }
     @Given("enter password {string}")
     public void enter_password(String string) {
 
-        managementonSchoolHomePage.passwordLogin.sendKeys("Pinkman98");
+        managementonSchoolHomePage.passwordLogin.sendKeys("Manisa98");
 
     }
     @Given("student clicks login button")
@@ -128,16 +128,16 @@ public class US_21_StepDefs {
 
     @Given("student selects multiple simultaneous {string}")
     public void student_selects_multiple_simultaneous(String string) {
-        WebElement lesson1= Driver.getDriver().findElement(By.xpath("//*[@value='89']"));
-        lesson1.click();
-        WebElement lesson2= Driver.getDriver().findElement(By.xpath("//*[@value='90']"));
-        lesson2.click();
+        WebElement lesson1= Driver.getDriver().findElement(By.xpath("//*[@value='5']"));
+        BrowserUtils.clickWithTimeOut(lesson1,3);
+        WebElement lesson2= Driver.getDriver().findElement(By.xpath("//*[@value='150']"));
+        BrowserUtils.clickWithTimeOut(lesson2,3);
     }
 
     @Then("verify the notification of denial")
     public void verify_the_notification_of_denial() {
 
-        assertTrue(chooseLessonPage.warningAlert.isDisplayed());
+        BrowserUtils.verifyElementDisplayed(chooseLessonPage.warningAlert);
 
     }
 
@@ -156,24 +156,22 @@ public class US_21_StepDefs {
     }
     @Then("verify the visibility of grades")
     public void verify_the_visibility_of_grades() {
-
-        assertTrue(gradesAnnouncementsPage.studentInfoList.isDisplayed());
-
-
-
+        BrowserUtils.verifyElementDisplayed(gradesAnnouncementsPage.studentInfoList);
     }
 
     @Then("verify the visibility of meetings")
     public void verify_the_visibility_of_meetings() {
-        assertTrue(gradesAnnouncementsPage.meetList.isDisplayed());
+        BrowserUtils.verifyElementDisplayed(gradesAnnouncementsPage.meetList);
 
     }
 
     @And("student selects a simultaneous lesson2 {string}")
     public void studentSelectsASimultaneousLesson2(String arg0) {
 
-        Driver.getDriver().findElement(By.xpath("//*[@value='"+arg0+"']")).click();
+        WebElement lesson2=Driver.getDriver().findElement(By.xpath("//*[@value='"+arg0+"']"));
         //Driver.getDriver().findElement(By.xpath("//*[@value='"+arg1+"']")).click();
+
+        BrowserUtils.clickWithTimeOut(lesson2,3);
 
     }
 
@@ -181,17 +179,28 @@ public class US_21_StepDefs {
     public void selectChooseLessonLink() {
         //JSUtils.clickWithTimeoutByJS(managementonSchoolHomePage.chooseLessonLink);
 
-
         BrowserUtils.clickWithTimeOut(managementonSchoolHomePage.chooseLessonLink,7);
+    }
+
+    WebElement lesson1=null;
+    @And("student selects lesson1 {string}")
+    public void studentSelectsLesson1(String arg1) {
+
+        lesson1=Driver.getDriver().findElement(By.xpath("//*[@value='"+arg1+"']"));
+        BrowserUtils.clickWithTimeOut(lesson1,3);
 
 
     }
 
-    @And("student selects lesson2 {string}")
-    public void studentSelectsLesson(String arg1) {
+    @And("student unselects lesson1")
+    public void studentUnselectsLesson1() {
+        BrowserUtils.clickWithTimeOut(lesson1,3);
+    }
 
-        Driver.getDriver().findElement(By.xpath("//*[@value='"+arg1+"']")).click();
+    @Then("simultaneous courses alert")
+    public void simultaneousCoursesAlert() {
 
+        BrowserUtils.verifyElementDisplayed(chooseLessonPage.simulatenousLessonsError);
 
     }
 }
