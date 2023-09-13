@@ -8,10 +8,13 @@ public class Add_Teacher_Page {
     public Add_Teacher_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    @FindBy(xpath="//button[.='Menu']")
+    public static WebElement menuButton;
+
     @FindBy(id = "react-select-22-live-region")
     public WebElement chooseLessons;
     @FindBy(id = "react-select-22-option-0")
-    public WebElement english;
+    public static WebElement english;
     @FindBy(id = "name")
     public WebElement name;
     @FindBy(id = "surname")
