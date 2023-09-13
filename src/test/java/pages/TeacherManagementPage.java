@@ -11,11 +11,21 @@ public class TeacherManagementPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[.='Select lesson']")
+    @FindBy(css = "input[id='react-select-2-input']")
     public WebElement chooseLessonSection;
 
     @FindBy(id = "name")
     public WebElement nameField;
+
+    @FindBy(id = "controlled-tab-example-tab-advisorTeachersList")
+    public WebElement advisorList;
+
+    @FindBy(id = "controlled-tab-example-tab-teachersList")
+    public WebElement teacherList;
+
+
+
+
 
     @FindBy(id = "surname")
     public WebElement surnameField;
@@ -49,8 +59,11 @@ public class TeacherManagementPage {
     @FindBy(xpath = "//*[.='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//*[.='Teacher saved successfully']")
+    @FindBy(xpath = "//button[@class='Toastify__close-button Toastify__close-button--colored']")
     public WebElement successNotification;
+
+    @FindBy(xpath = "//*[.='Required']")
+    public WebElement requiredAlert;
 
 
 }

@@ -3,8 +3,8 @@
     Background:Login with admin account and go to teacher registration
       Given navigate to "https://managementonschools.com/"
       And click login link
-      And enter admin username "username"
-      And enter admin password "password"
+      And enter admin username "Admin98"
+      And enter admin password "Admin9898"
       And student clicks login button
       And click menu button
       And select teacher management link
@@ -12,16 +12,16 @@
     @us_23_tc_01
     Scenario: to add teacher via admin account
       And Select a course "Cypress"
-      And enter a name "Denice"
-      And enter surname "surname"
-      And enter Birthplace "birthplace"
-      And enter an email "kyt@asfv.com"
+      And enter a name "Deniaae"
+      And enter surname "Deniee"
+      And enter Birthplace "Karlruher"
+      And enter an email "kaasdt@asfv.com"
       And select gender "female"
-      And enter birthdate "11112000"
-      And add a phone number "121-233-3457"
-      And enter SSN number "232-22-3443"
-      And enter username "WW" for teacher
-      And enter "password" with true credentials
+      And enter birthdate "11101999"
+      And add a phone number "150-663-2257"
+      And enter SSN number "243-80-6643"
+      And enter username "WWaim12" for teacher
+      And enter "WWaim543" with true credentials
       And click on teacher Submit button
       Then verify teacher is created
 
