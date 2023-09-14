@@ -58,7 +58,7 @@ public class Driver {
                 break;
         }
         //driver -> getDriver()
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         getDriver().manage().window().maximize();
     }
     //    if driver is pointing any object such as chrome or edge, then quit

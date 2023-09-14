@@ -25,39 +25,44 @@ public class ManagementonSchoolHomePage {
     public WebElement loginButton;
 
 // ----------------REGISTER-------------------
-    @FindBy(linkText = "/register")
+    @FindBy(xpath = "//a[@class='header_link me-2']")
     public WebElement register;
 
-    @FindBy(linkText = "//input[@id='name']")
+    @FindBy(xpath = "//input[@id='name']")
     public WebElement name;
 
-    @FindBy(linkText = "//input[@id='name']")
+    @FindBy(xpath = "//input[@id='surname']")
     public WebElement surname;
 
-    @FindBy(linkText = "//input[@id='birthPlace']")
+    @FindBy(xpath = "//input[@id='birthPlace']")
     public WebElement birthPlace;
 
-    @FindBy(linkText = "//input[@id='phoneNumber']")
+    @FindBy(xpath = "//input[@id='phoneNumber']")
     public WebElement phoneNumber;
 
-    @FindBy(linkText = "//input[@value='FEMALE']")
+    @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement femaleRadioButton;
 
-    @FindBy(linkText = "//input[@value='MALE']")
+    @FindBy(xpath = "//input[@value='MALE']")
     public WebElement maleRadioButton;
 
-    @FindBy(linkText = "//input[@id='birthDay']")
+    @FindBy(xpath = "//input[@id='birthDay']")
     public WebElement dateOfBirth;
 
-    @FindBy(linkText = "//input[@id='ssn']")
+    @FindBy(xpath = "//input[@id='ssn']")
     public WebElement ssn;
 
-    @FindBy(linkText = "//input[@id='username']")
+    @FindBy(xpath = "//input[@id='username']")
     public WebElement userNameRegister;
 
-    @FindBy(linkText = "//input[@id='password']")
+    @FindBy(xpath = "//input[@id='password']")
     public WebElement passwordRegister;
-    @FindBy(linkText = "//button[.='Register']")
+    @FindBy(xpath = "//button[.='Register']")
     public WebElement registerButton;
 
+    @FindBy(xpath = "//div[contains(text(),'Guest User registered')]")
+    public WebElement guestUserRegistrationVerificationMessage;
+
+    @FindBy(xpath = "//button[.='Menu']")
+    public WebElement menu;
 }
