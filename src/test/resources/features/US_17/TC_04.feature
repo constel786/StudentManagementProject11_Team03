@@ -1,7 +1,7 @@
 @us17tc04
   Feature: Teacher not entered "absentee"
     Background: navigating_managementon_school_home_page
-      Given teacher navigates to "https://managementonschools.com"
+      Given user navigates to "https://managementonschools.com"
       When  teacher must be logged website
 
     Scenario: US_17_TC_04_add_student_info_not_entered_absentee
@@ -18,5 +18,5 @@
       And entered Final Exam 95
       And entered Info Note "so successfully, keep going"
       And click on Submit button
-      Then Verify "Required" message
+      Then Verify absentee "Required" message
       And close the page

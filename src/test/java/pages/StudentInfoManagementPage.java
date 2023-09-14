@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.java.zh_cn.假如;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -44,56 +45,55 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//button[.='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//div[@info='Student Info saved Successfully']")
+    @FindBy(xpath = "(//*[.='Student Info saved Successfully'])[5]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "//tbody/tr/td[1]")
-    public WebElement nameField;
+    @FindBy(xpath = "/html/body/div/div/main/div/div[1]/div[3]/div/div/div[3]/div/div")
+    public WebElement selectLessonErrorMessage;
 
-    @FindBy(xpath = "//tbody/tr/td[2]")
-    public WebElement lessonNameField;
+    @FindBy(xpath = "/html/body/div/div/main/div/div[1]/div[3]/div/div/div[3]/div/div/div[1]/div[2]")
+    public WebElement selectEducationTermErrorMessage;
 
-    @FindBy(xpath = "//tbody/tr/td[3]")
-    public WebElement absenteeField;
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div[1]/div[3]/div/div/div[3]/div/div/div[1]/div[2]")
+    public WebElement successMessage1;
 
-    @FindBy(xpath = "//tbody/tr/td[4]")
-    public WebElement midtermExamField;
+    @FindBy(xpath= "/html/body/div/div/main/div/div[1]/div[3]/div/div/div[3]/div/div/div[1]/div[2]")
+    public WebElement errorMessage;
 
-    @FindBy(xpath = "//tbody/tr/td[5]")
-    public WebElement finalExamField;
+    @FindBy(xpath = "//h5[.='Student Info List']")
+    public WebElement studentInfoList;
 
-    @FindBy(xpath = "//tbody/tr/td[6]")
-    public WebElement noteField;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[1]/td[1]/span")
+    public WebElement jamesBondNameField;
 
-    @FindBy(xpath = "//tbody/tr/td[7]")
-    public WebElement infoNoteField;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[2]/td[1]/span")
+    public WebElement malikaMorarField;
 
-    @FindBy(xpath = "//tbody/tr/td[8]")
-    public WebElement averageField;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[3]/td[1]/span")
+    public WebElement jessiePinkmanField;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[1]/td[9]/span/button/text()")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[4]/td[1]/span")
+    public WebElement aliCanNameField;
+
+    @FindBy(xpath = "(//td/span/button[@type='button'])[1]")
     public WebElement editButton1;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[2]/td[9]/span/button/text()")
-    public WebElement editButton2;
-
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[3]/td[9]/span/button/text()")
-    public WebElement editButton3;
-
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[4]/td[9]/span/button/text()")
+    @FindBy(xpath = "(//button[@type='button'])[12]")
     public WebElement editButton4;
 
-    @FindBy(xpath = "(//button//i[@class='fa-solid fa-trash'])[1]")
-    public WebElement deleteButton1;
-
-    @FindBy(xpath = "(//button//i[@class='fa-solid fa-trash'])[2]")
-    public WebElement deleteButton2;
-
-    @FindBy(xpath = "(//button//i[@class='fa-solid fa-trash'])[3]")
-    public WebElement deleteButton3;
-
-    @FindBy(xpath = "(//button//i[@class='fa-solid fa-trash'])[4]")
+    @FindBy(xpath = "(//button[@type='button'])[13]")
     public WebElement deleteButton4;
+
+    @FindBy(xpath = "(//*[.='Student Info deleted Successfully'])[5]")
+    public WebElement deleteSuccessMessage;
+
+  //  @FindBy(xpath = "/html/body/div/div/main/div/div[2]/div/div/div[1]/div[2]")
+ //   public WebElement deleteSuccessMessage;
+
+    @FindBy(xpath = "//*[@fill='currentColor']")
+    public WebElement deleteSuccessIcon;
+
+
 
 
 
