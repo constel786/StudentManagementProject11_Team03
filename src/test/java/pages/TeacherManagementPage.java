@@ -23,10 +23,6 @@ public class TeacherManagementPage {
     @FindBy(id = "controlled-tab-example-tab-teachersList")
     public WebElement teacherList;
 
-
-
-
-
     @FindBy(id = "surname")
     public WebElement surnameField;
 
@@ -59,11 +55,22 @@ public class TeacherManagementPage {
     @FindBy(xpath = "//*[.='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//button[@class='Toastify__close-button Toastify__close-button--colored']")
+    @FindBy(xpath = "(//*[.='Teacher saved successfully']/div/div/div/div)[2]")
     public WebElement successNotification;
 
     @FindBy(xpath = "//*[.='Required']")
     public WebElement requiredAlert;
+
+    @FindBy(xpath = "//*[.='Enter your password']")
+    public WebElement enterPasswordAlert;
+
+    @FindBy(xpath = "//*[.='Logout']")
+    public WebElement logoutLink;
+
+    @FindBy(xpath = "(//*[.='You have entered an invalid value. Valid values are: MALE, FEMALE']/div/div/div/div)[2]")
+    public WebElement invalidValueNotification;
+
+
 
 
 }

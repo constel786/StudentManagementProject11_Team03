@@ -143,4 +143,23 @@ public class US_23_StepDefs {
         BrowserUtils.verifyElementDisplayed(teacherManagementPage.requiredAlert);
 
     }
+
+    @Then("click logout button")
+    public void clickLogoutButton() {
+
+        BrowserUtils.clickWithTimeOut(teacherManagementPage.logoutLink,2);
+
+    }
+
+    @Then("verify invalid value notification")
+    public void verifyInvalidValueNotification() {
+        BrowserUtils.verifyElementDisplayed(teacherManagementPage.invalidValueNotification);
+    }
+
+    @Then("verify enter password alert")
+    public void verifyEnterPasswordAlert() {
+
+        BrowserUtils.verifyElementDisplayed(teacherManagementPage.enterPasswordAlert);
+
+    }
 }

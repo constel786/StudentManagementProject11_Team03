@@ -77,6 +77,7 @@ public class US_21_StepDefs {
     public void close_the_application() {
 
         Driver.closeDriver();
+        WaitUtils.waitFor(2);
 
     }
 
