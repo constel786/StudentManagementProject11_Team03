@@ -10,14 +10,17 @@ import utilities.WaitUtils;
 
 public class CommonStepDefs {
 
+
     ManagementonSchoolHomePage managementonSchoolHomePage = new ManagementonSchoolHomePage();
 
     @Then("close the page")
     public void close_the_page (){
         WaitUtils.waitFor(1);
         Driver.closeDriver();}
-    @Given("teacher navigates to {string}")
-    public void userNavigatesTo(String url) {
+
+    @Given("user navigates to {string}")
+    public void user_navigates_to(String url) {
+
         Driver.getDriver().get(url);
     }
 
@@ -48,7 +51,6 @@ public class CommonStepDefs {
     public void userClicksLoginButton() {
         managementonSchoolHomePage.loginButton.click();
     }
-
 
 
 }
