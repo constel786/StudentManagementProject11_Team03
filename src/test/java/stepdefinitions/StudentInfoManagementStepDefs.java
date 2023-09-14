@@ -371,7 +371,7 @@ public class StudentInfoManagementStepDefs {
     @Then("Verify delete {string}")
     public void verify_delete(String message) {
     //assertTrue(studentInfoManagementPage.deleteSuccessMessage.getText().equalsIgnoreCase("Student Info deleted Successfully"));
-
+     //
     }
 
 
