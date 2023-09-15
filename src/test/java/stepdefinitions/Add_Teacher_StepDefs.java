@@ -1,5 +1,8 @@
 package stepdefinitions;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +16,11 @@ import utilities.BrowserUtils;
 import utilities.Driver;
 public class Add_Teacher_StepDefs {
     Add_Teacher_Page addTeacherPage = new Add_Teacher_Page();
+    Add_Admin_Page addAdminPage = new Add_Admin_Page();
 
+    protected static ExtentReports extentReports;
+    protected static ExtentSparkReporter extentSparkReporter;
+    protected static ExtentTest extentTest;
     @Given("vice dean login")
     public void vice_dean_login() throws InterruptedException {
         Driver.getDriver().get("https://managementonschools.com");

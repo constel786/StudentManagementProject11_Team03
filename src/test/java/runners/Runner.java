@@ -18,8 +18,8 @@ import org.junit.runner.RunWith;
         monochrome = true,//makes reports more readable in the console
         features = "./src/test/resources/features",//path of feature file
         glue = "stepdefinitions", //path of the step definitions
-        tags = "@xyz",
-        dryRun = false //executes to generate missing step definitions
+        tags = "@US13",
+        dryRun = true  //executes to generate missing step definitions
 )
 public class Runner {
 }
