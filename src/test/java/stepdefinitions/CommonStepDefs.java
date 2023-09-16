@@ -7,14 +7,10 @@ import utilities.Driver;
 
 public class CommonStepDefs {
 
-    @Then("close the page")
-    public void close_the_page (){
-        Driver.closeDriver();}
-    @Given("teacher navigates to {string}")
-    public void userNavigatesTo(String url) {
-        Driver.getDriver().get(url);
+    @Given("user navigates to {string}")
+    public void user_navigates_to(String string) {
+        Driver.getDriver().get(string);
     }
-
 
 
 }
