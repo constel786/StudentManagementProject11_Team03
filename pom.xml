@@ -21,15 +21,12 @@
             <artifactId>selenium-java</artifactId>
             <version>4.11.0</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.4.1</version>
         </dependency>
-
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -61,20 +58,23 @@
             <artifactId>extentreports</artifactId>
             <version>5.1.0</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
         <dependency>
             <groupId>tech.grasshopper</groupId>
             <artifactId>extentreports-cucumber7-adapter</artifactId>
             <version>1.6.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
         </dependency>
+<<<<<<< HEAD
 
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
@@ -83,8 +83,9 @@
             <version>1.0.2</version>
         </dependency>
 
+=======
+>>>>>>> 649e825fe964f3b3fd67ae1cd59d6a1a5b7b7f7f
     </dependencies>
-
 
 
     <build>
@@ -153,7 +154,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 

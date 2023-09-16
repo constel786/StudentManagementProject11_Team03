@@ -2,17 +2,16 @@ package stepdefinitions;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import pages.EditStudentInfoPage;
+import pages.LessonPage;
 import pages.ManagementonSchoolHomePage;
 import pages.StudentInfoManagementPage;
 import utilities.ConfigReader;
-import utilities.Driver;
 import utilities.WaitUtils;
 
 import static org.junit.Assert.assertTrue;
@@ -210,4 +209,9 @@ public class StudentInfoManagementStepDefs {
 
 
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> 649e825fe964f3b3fd67ae1cd59d6a1a5b7b7f7f
