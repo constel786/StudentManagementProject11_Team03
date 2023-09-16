@@ -28,8 +28,6 @@ public class StudentMeetStepDefs {
     ManagementonSchoolHomePage managementonSchoolHomePage = new ManagementonSchoolHomePage();
     MeetManagementPage meetManagementPage = new MeetManagementPage();
 
-    protected static ExtentReports extentReports;
-    protected static ExtentSparkReporter extentSparkReporter;
 
 
     @Given("user clicks on home page login button")

@@ -63,11 +63,14 @@
             <artifactId>extentreports-cucumber7-adapter</artifactId>
             <version>1.6.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -83,8 +86,7 @@
             <version>1.0.2</version>
         </dependency>
 
-=======
->>>>>>> 649e825fe964f3b3fd67ae1cd59d6a1a5b7b7f7f
+
     </dependencies>
 
 
