@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+
         plugin = {
-<<<<<<< HEAD
+
                         "pretty",//generates reports on the console
                         "html:target/default-cucumber-reports.html",
                         "json:target/json-reports/cucumber.json",
@@ -16,28 +17,16 @@ import org.junit.runner.RunWith;
                         "rerun:target/failedRerun.txt",
                         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
                         },
+                        monochrome = false,//makes reports more readable in the console
                         features = "./src/test/resources/features",//path of feature file
                         glue = "stepdefinitions", //path of the step definitions
                         tags = " @tc04",
                         dryRun = false //executes to generate missing step definitions
                         )
-=======
-                "pretty",
-                "html:target/default-cucumber-reports.html",
-                "json:target/json-reports/cucumber.json",
-                "junit:target/xml-report/cucumber.xml",
-                "rerun:target/failedRerun.txt",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-        },
 
-        monochrome = false,//makes reports more readable in the console
-        features = "./src/test/resources/features",//path of feature file
-        glue = "stepdefinitions", //path of the step definitions
-        tags = "@bedo",
 
-        dryRun = false //executes to generate missing step definitions
-
-)
->>>>>>> 649e825fe964f3b3fd67ae1cd59d6a1a5b7b7f7f
 public class Runner {
+
+
+
 }
