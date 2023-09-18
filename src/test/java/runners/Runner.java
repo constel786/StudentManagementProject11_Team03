@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {
-                "pretty",
+
+        plugin = {//report plugins
+                "pretty",//generates reports on the console
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
@@ -16,12 +17,15 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
 
-
-        features = "src/test/resources/features",//path of feature file
+        monochrome = false,//makes reports more readable in the console
+        features = "./src/test/resources/features",//path of feature file
         glue = "stepdefinitions" ,//path of the step definitions
-        tags = "@us16tc29",
+        tags = "@US25_01",
         dryRun = false //executes to generate missing step definitions
 
 )
+
+
 public class Runner {
+
 }
