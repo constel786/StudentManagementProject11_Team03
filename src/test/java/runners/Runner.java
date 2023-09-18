@@ -17,6 +17,7 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
 
+
         monochrome = false,//makes reports more readable in the console
         features = "./src/test/resources/features",//path of feature file
         glue = "stepdefinitions" ,//path of the step definitions
@@ -28,4 +29,6 @@ import org.junit.runner.RunWith;
 
 public class Runner {
 
+
 }
+
