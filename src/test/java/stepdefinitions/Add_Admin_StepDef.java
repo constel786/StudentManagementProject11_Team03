@@ -6,7 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.Add_Admin_Page;
-import utilities.BrowserUtils;
 import utilities.Driver;
 
 public class Add_Admin_StepDef {
