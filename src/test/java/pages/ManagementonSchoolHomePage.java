@@ -60,9 +60,19 @@ public class ManagementonSchoolHomePage {
     @FindBy(xpath = "//button[.='Register']")
     public WebElement registerButton;
 
+
+    //------Menu Button------
+
+    @FindBy (xpath = "(//button)[1]")
+    public WebElement menuButton;
+
+    @FindBy(xpath = "//*[.='Choose Lesson']")
+    public WebElement chooseLessonLink;
+
     @FindBy(xpath = "//div[contains(text(),'Guest User registered')]")
     public WebElement guestUserRegistrationVerificationMessage;
 
     @FindBy(xpath = "//button[.='Menu']")
     public WebElement menu;
+
 }

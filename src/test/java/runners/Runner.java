@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+
         plugin = {
 
                         "pretty",//generates reports on the console
@@ -24,6 +25,8 @@ import org.junit.runner.RunWith;
                         )
 
 
-       
 public class Runner {
+
+
+
 }
