@@ -12,6 +12,8 @@ public class StudentInfoManagementPage {
         PageFactory.initElements(Driver.getDriver(), this);}
 
 
+
+
     @FindBy(xpath = "//button[.='Menu']")
     public WebElement menu;
 

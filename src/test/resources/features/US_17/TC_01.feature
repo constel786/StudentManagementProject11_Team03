@@ -1,7 +1,9 @@
 @us17tc01
 Feature:The Teacher, must be entered without missing field
   Background: navigating_managementon_school_home_page
+  
     Given user navigates to "https://managementonschools.com"
+
     When  teacher must be logged website
 
   Scenario Outline: US_17_TC_01_add_student_info
