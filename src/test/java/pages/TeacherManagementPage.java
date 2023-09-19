@@ -83,11 +83,11 @@ public class TeacherManagementPage {
     @FindBy(id = "phoneNumber")
     public WebElement phoneNumber;
 
-    @FindBy(xpath = "(//input[@name='gender'])[1]")
-    public WebElement genderFemale;
+ //   @FindBy(xpath = "(//input[@name='gender'])[1]")
+  //  public WebElement genderFemale;
 
-    @FindBy(xpath = "(//input[@name='gender'])[2]")
-    public WebElement genderMale;
+ //   @FindBy(xpath = "(//input[@name='gender'])[2]")
+ ///   public WebElement genderMale;
     @FindBy(id = "birthDay")
     public WebElement birthDay;
 
