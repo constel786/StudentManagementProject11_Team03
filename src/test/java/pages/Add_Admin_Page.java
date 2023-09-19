@@ -11,15 +11,15 @@ public class Add_Admin_Page {
 
         }
         @FindBy(xpath = "//*[@class='header_link ms-2']")
-        public WebElement LOGIN_BUTTON_1;
+        public static WebElement LOGIN_BUTTON_1;
 
         @FindBy(id = "username" )
-        public WebElement LOGIN_USERNAME;
+        public static WebElement LOGIN_USERNAME;
         @FindBy(id = "password" )
-        public WebElement LOGIN_PASSWORD;
+        public static WebElement LOGIN_PASSWORD;
 
         @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary']")
-        public WebElement LOGIN_BUTTON_2;
+        public static WebElement LOGIN_BUTTON_2;
 
         @FindBy(id = "name")
         public WebElement ADMIN_NAME;

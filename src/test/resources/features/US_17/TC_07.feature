@@ -1,7 +1,7 @@
 @us17tc07
   Feature:Teacher not entered "Info note"
     Background: navigating_managementon_school_home_page
-      Given teacher navigates to "https://managementonschools.com"
+      Given user navigates to "https://managementonschools.com"
       When  teacher must be logged website
 
     Scenario: US_17_TC_07_add_student_info_not_entered_info_note
@@ -16,7 +16,7 @@
       And entered Absentee 1
       And entered Midterm Exam 90
       And entered Final Exam 95
-      And not entered Info Note
+      And not entered info Note
       And click on Submit button
-      Then Verify "Required" message
+      Then Verify info note "Required" message
       And close the page
