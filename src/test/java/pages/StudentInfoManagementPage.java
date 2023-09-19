@@ -93,6 +93,9 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[@fill='currentColor']")
     public WebElement deleteSuccessIcon;
 
+    @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--success Toastify__toast--close-on-click']")
+    public WebElement successIcon;
+
 
 
 

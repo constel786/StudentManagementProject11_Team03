@@ -15,7 +15,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-
 public class StudentInfoManagementStepDefs {
      ManagementonSchoolHomePage managementonSchoolHomePage = new ManagementonSchoolHomePage();
      StudentInfoManagementPage studentInfoManagementPage = new StudentInfoManagementPage();
@@ -97,8 +96,10 @@ public class StudentInfoManagementStepDefs {
     }
     @Then("verify {string}")
     public void verify(String string) {
-    //  WaitUtils.waitFor(2);
+      WaitUtils.waitFor(2);
     //  assertTrue(studentInfoManagementPage.successMessage1.getText().equalsIgnoreCase("Student Info saved Successfully"));
+    //   BrowserUtils.verifyElementClickable(studentInfoManagementPage.successIcon);
+        assertTrue(studentInfoManagementPage.successIcon.getText().contains("Student Info saved Successfully"));
     }
 
     @When("not select Lesson")
@@ -199,10 +200,6 @@ public class StudentInfoManagementStepDefs {
     @Then("Verify info note {string} message")
     public void verify_info_note_message(String string) {
      //   assertTrue(editStudentInfoPage.requiredMessage.getText().equals("Required"));
-    }
-    @When("select Hector Salamanca")
-    public void select_hector_salamanca() {
-       studentInfoManagementPage.chooseStudent.sendKeys("Hector Salamanca" + Keys.ENTER);
     }
 
     @When("go to Student info List")
