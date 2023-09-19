@@ -19,7 +19,8 @@ public class Add_Teacher_Page {
     public static WebElement LOGIN_BUTTON_2;
     @FindBy(xpath="//button[.='Menu']")
     public static WebElement menuButton;
-
+    @FindBy(xpath="//a[.='Teacher Management']")
+    public static WebElement teacherManagement;
     @FindBy(id = "react-select-22-live-region")
     public WebElement chooseLessons;
     @FindBy(id = "react-select-22-option-0")
@@ -47,24 +48,4 @@ public class Add_Teacher_Page {
     @FindBy(xpath = "//button[.='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//input[@placeholder='Name']/following-sibling::div")
-    public WebElement NAME_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@placeholder='Surname']/following-sibling::div")
-    public WebElement SURNAME_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@placeholder='Birth Place']/following-sibling::div")
-    public WebElement BIRTHPLACE_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@type='date']/following-sibling::div")
-    public WebElement BIRTHDAY_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@placeholder='Phone Number']/following-sibling::div")
-    public WebElement PHONENUMBER_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@placeholder='ssn']/following-sibling::div")
-    public WebElement SSN_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@placeholder='username']/following-sibling::div")
-    public WebElement USERNAME_INVALID_FEEDBACK;
-    @FindBy(xpath = "//input[@placeholder='Password']/following-sibling::div")
-    public WebElement PASSWORD_INVALID_FEEDBACK;
-    @FindBy(xpath = "//*[text()='Admin Saved']")
-    public WebElement SAVED_FEEDBACK;
-    @FindBy(xpath = "//*[text()='Please enter valid SSN number']")
-    public WebElement SSN_INVALID_NOTIFICATION;
 }

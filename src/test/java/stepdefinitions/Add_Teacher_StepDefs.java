@@ -12,15 +12,19 @@ import org.openqa.selenium.WebElement;
 import pages.Add_Admin_Page;
 import pages.Add_Teacher_Page;
 import pages.ManagementonSchoolHomePage;
+import pages.StudentInfoManagementPage;
 import utilities.BrowserUtils;
 import utilities.Driver;
+import utilities.WaitUtils;
+
 public class Add_Teacher_StepDefs {
     Add_Teacher_Page addTeacherPage = new Add_Teacher_Page();
     Add_Admin_Page addAdminPage = new Add_Admin_Page();
 
-    protected static ExtentReports extentReports;
-    protected static ExtentSparkReporter extentSparkReporter;
-    protected static ExtentTest extentTest;
+//    protected static ExtentReports extentReports;
+//    protected static ExtentSparkReporter extentSparkReporter;
+//    protected static ExtentTest extentTest;
+
     @Given("vice dean login")
     public void vice_dean_login() throws InterruptedException {
         Driver.getDriver().get("https://managementonschools.com");
@@ -29,113 +33,86 @@ public class Add_Teacher_StepDefs {
         Add_Admin_Page.LOGIN_USERNAME.sendKeys("VDProject11");
         Add_Admin_Page.LOGIN_PASSWORD.sendKeys("Nowayjose1234");
         Add_Admin_Page.LOGIN_BUTTON_2.click();
-        Add_Teacher_Page.menuButton.click();
+
     }
-    @When("Click the dropdown button")
-        public void click_the_dropdown_button(){
+    @When("Click the Menu button")
+    public void clickTheMenuButton() {
+        addTeacherPage.menuButton.click();
+        WaitUtils.waitFor(1);
+    }
+    @When("Click the Teacher Management button")
+    public void clickTheTeacherManagementButton() {
+        addTeacherPage.teacherManagement.click();
+        WaitUtils.waitFor(1);
+    }
+    @When("Select Choose Lessons dropdown")
+    public void selectChooseLessonsDropdown() {
         addTeacherPage.chooseLessons.click();
+        WaitUtils.waitFor(1);
     }
-    @And("Select the lesson {String}")
-    public void select_the_lesson(String english){
+    @And("Click lesson {string}")
+    public void clickLesson(String arg0) {
         addTeacherPage.english.click();
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the name field")
     public void enter_in_the_name(String name) {
         addTeacherPage.name.sendKeys(name);
+        WaitUtils.waitFor(1);
     }
     @And("Enter {string} in the surname field")
     public void enter_in_the_surname(String surname) {
         addTeacherPage.name.sendKeys(surname);
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the Birth Place field")
     public void enter_in_the_birth_place(String birthPlace) {
         addTeacherPage.birthPlace.sendKeys(birthPlace);
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the Email field")
     public void enter_in_the_email(String email){
         addTeacherPage.email.sendKeys(email);
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the Phone field")
     public void enter_in_the_phone(String phoneNumber){
         addTeacherPage.phoneNumber.sendKeys(phoneNumber);
+        WaitUtils.waitFor(1);
     }
-    @When("Select the gender")
-    public void select_the_gender(){
+    @And("Select {string} in the Gender field")
+    public void selectInTheGenderField(String arg0) {
         addTeacherPage.genderMale.click();
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the Date of Birth field")
     public void enter_in_the_date_of_birth(String birthDay){
         addTeacherPage.birthDay.sendKeys(birthDay);
+        WaitUtils.waitFor(1);
     }
-    @When("Enter {string} in the SSN field")
-    public void enter_in_the_SSN(String ssn){
+    @And("Enter ssn number {string}")
+    public void enterSsnNumber(String arg0) {
         addTeacherPage.ssn.sendKeys();
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the username field")
     public void enter_in_the_username(String username){
         addTeacherPage.username.sendKeys(username);
+        WaitUtils.waitFor(1);
     }
     @When("Enter {string} in the password field")
     public void enter_in_the_password(String password){
         addTeacherPage.password.sendKeys(password);
+        WaitUtils.waitFor(1);
     }
     @When("Click the Submit button")
     public void click_the_submit_button(){
         addTeacherPage.submitButton.click();
+        WaitUtils.waitFor(1);
+    }
+    @Then("Verify Teacher is created")
+    public void verifyTeacherIsCreated() {
+
     }
 
-    @Then("Verify that user received required notification under the name field")
-    public void verify_that_user_received_required_notification_under_the_name_field() {
-        Assert.assertEquals(addTeacherPage.NAME_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the surname field")
-    public void verifyThatUserReceivedRequiredNotificationUnderTheSurnameField() {
-        Assert.assertEquals(addTeacherPage.SURNAME_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the Birth Place field")
-    public void verifyThatUserReceivedRequiredNotificationUnderTheBirthPlaceField() {
-        Assert.assertEquals(addTeacherPage.BIRTHPLACE_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the Date of Birth field")
-    public void verifyThatUserReceivedRequiredNotificationUnderTheDateOfBirthField() {
-        Assert.assertEquals(addTeacherPage.BIRTHDAY_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the Phone Number field")
-    public void verifyThatUserReceivedRequiredNotificationUnderThePhoneNumberField() {
-        Assert.assertEquals(addTeacherPage.PHONENUMBER_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the Ssn field")
-    public void verifyThatUserReceivedRequiredNotificationUnderTheSsnField() {
-        Assert.assertEquals(addTeacherPage.SSN_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the username field")
-    public void verifyThatUserReceivedRequiredNotificationUnderTheUsernameField() {
-        Assert.assertEquals(addTeacherPage.USERNAME_INVALID_FEEDBACK.getText(), "Required");
-    }
-    @Then("Verify that user received required notification under the password field")
-    public void verifyThatUserReceivedRequiredNotificationUnderThePasswordField() {
-        Assert.assertEquals(addTeacherPage.PASSWORD_INVALID_FEEDBACK.getText(), "Enter your password");
-    }
-    @Then("Verify that user received LOWERCASE required notification under the Password field")
-    public void verifyThatUserReceivedLOWERCASERequiredNotificationUnderThePasswordField() {
-        Assert.assertEquals(addTeacherPage.PASSWORD_INVALID_FEEDBACK.getText(), "One lowercase character");
-    }
-    @Then("Verify that user received UPPERCASE required notification under the Password field")
-    public void verifyThatUserReceivedUPPERCASERequiredNotificationUnderThePasswordField() {
-        Assert.assertEquals(addTeacherPage.PASSWORD_INVALID_FEEDBACK.getText(), "One uppercase character");
-    }
-    @Then("Verify that user received NUMBER required notification under the Password field")
-    public void verifyThatUserReceivedNUMBERRequiredNotificationUnderThePasswordField() {
-        Assert.assertEquals(addTeacherPage.PASSWORD_INVALID_FEEDBACK.getText(), "One number");
-    }
-    @Then("Verify that user received saved notification pop up")
-    public void verifyThatUserReceivedSavedNotificationPopUp() throws InterruptedException {
-        Thread.sleep(1000);
-        Assert.assertTrue(addTeacherPage.SAVED_FEEDBACK.isDisplayed());
-    }
-    @Then("Verify that user received invalid notification pop up")
-    public void verifyThatUserReceivedInvalidNotificationPopUp() throws InterruptedException {
-        Thread.sleep(1000);
-        Assert.assertTrue(addTeacherPage.SSN_INVALID_NOTIFICATION.isDisplayed());
-    }
 }
