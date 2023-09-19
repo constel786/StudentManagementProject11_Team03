@@ -410,17 +410,6 @@ public class StudentInfoManagementStepDefs {
     }
 
 
-
-}
-
-    @When("not entered Midterm Exam")
-    public void not_entered_midterm_exam() {
-    }
-
-    @When("not entered Final Exam")
-    public void not_entered_final_exam() {
-    }
-
     @When("not entered Info Note")
     public void not_entered_ınfo_note() {
 
@@ -428,4 +417,7 @@ public class StudentInfoManagementStepDefs {
     }
 
 }
+
+
+
 

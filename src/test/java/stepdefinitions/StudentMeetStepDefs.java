@@ -101,10 +101,10 @@ public class StudentMeetStepDefs {
     }
 
 
-    @And("close the page")
-    public void closeThePage() {
-        Driver.closeDriver();
-    }
+  //  @And("close the page")
+  //  public void closeThePage() {
+  //      Driver.closeDriver();
+  //  }
 
 
 
