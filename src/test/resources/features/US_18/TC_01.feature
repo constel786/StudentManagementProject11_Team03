@@ -1,4 +1,4 @@
-@us18tc01
+@us18tc01.0
 Feature: Teacher able to seeing student info list
 
   Background:navigating_managementon_school_home_page

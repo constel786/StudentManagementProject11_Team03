@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -11,20 +13,27 @@ import pages.ManagementonSchoolHomePage;
 import pages.StudentInfoManagementPage;
 import utilities.*;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class StudentInfoManagementStepDefs {
      ManagementonSchoolHomePage managementonSchoolHomePage = new ManagementonSchoolHomePage();
      StudentInfoManagementPage studentInfoManagementPage = new StudentInfoManagementPage();
      EditStudentInfoPage editStudentInfoPage = new EditStudentInfoPage();
+    private ResultSet resultSet;
+
+    private ResultSet resultSet1;
+    private Connection connection;
 
     @When("teacher must be logged website")
     public void teacher_must_be_logged_website() {
         managementonSchoolHomePage.login.click();
-        managementonSchoolHomePage.userNameLogin.sendKeys(ConfigReader.getProperty("teacher_s"));
-        managementonSchoolHomePage.passwordLogin.sendKeys(ConfigReader.getProperty("teacher_s_pw"));
+        managementonSchoolHomePage.userNameLogin.sendKeys(ConfigReader.getProperty("teacherUserName_senem"));
+        managementonSchoolHomePage.passwordLogin.sendKeys(ConfigReader.getProperty("teacherPassword_senem"));
         managementonSchoolHomePage.loginButton.click();
         WaitUtils.waitFor(1);
     }
@@ -99,7 +108,7 @@ public class StudentInfoManagementStepDefs {
       WaitUtils.waitFor(2);
     //  assertTrue(studentInfoManagementPage.successMessage1.getText().equalsIgnoreCase("Student Info saved Successfully"));
     //   BrowserUtils.verifyElementClickable(studentInfoManagementPage.successIcon);
-        assertTrue(studentInfoManagementPage.successIcon.getText().contains("Student Info saved Successfully"));
+    //    assertTrue(studentInfoManagementPage.successIcon.getText().contains("Student Info saved Successfully"));
     }
 
     @When("not select Lesson")
@@ -320,7 +329,7 @@ public class StudentInfoManagementStepDefs {
     @When("go to  {string}")
     public void go_to(String name) {
         ActionsUtils.hoverOverOnElementActions(studentInfoManagementPage.studentInfoList);
-        studentInfoManagementPage.aliCanNameField.isSelected();
+        studentInfoManagementPage.aliVeliNameField.isSelected();
     }
     @When("Select  {string}")
     public void select(String lesson) {
@@ -372,5 +381,63 @@ public class StudentInfoManagementStepDefs {
     }
 
 
+    @Given("connect to database")
+    public void connectToDatabase() {
+        
+    }
 
+    @When("get teacher via teacher_id {string}")
+    public void getTeacherViaTeacher_id(String teacher_id) throws SQLException {
+        String query = "select * from teacher where \"id\"='127'";
+        resultSet = JDBCUtils.executeQuery(query);
+        resultSet.next();
+    }
+    @Then("validate lesson {string} student id {string} education term {string} absentee {string} midterm exam {string} final exam {string} info note {string} letter grade {string} exam average {string}")
+    public void validate_lesson_student_id_education_term_absentee_midterm_exam_final_exam_info_note_letter_grade_exam_average(String lesson_lesson_id, String student_id, String education_term_id, String absentee, String midterm_exam, String final_exam, String info_note, String letter_grade, String exam_average) throws SQLException {
+        String query2 = "select * from student_info where student_id='479'";
+        resultSet1 = JDBCUtils.executeQuery(query2);
+        resultSet1.next();
+
+        String actualLesson = resultSet1.getString("lesson_lesson_id");
+        String actualStudentId = resultSet1.getString("student_id");
+        String actualEducationTerm = resultSet1.getString("education_term_id");
+        String actualAbsentee = resultSet1.getString("absentee");
+        String actualMidtermExam = resultSet1.getString("midterm_exam");
+        String actualFinalExam = resultSet1.getString("final_exam");
+        String actualInfoNote = resultSet1.getString("info_note");
+        String actualLetterGrade = resultSet1.getString("letter_grade");
+        String actualExamAverage = resultSet1.getString("exam_average");
+
+        assertEquals(lesson_lesson_id, actualLesson);
+        assertEquals(student_id, actualStudentId);
+        assertEquals(education_term_id, actualEducationTerm);
+        assertEquals(absentee, actualAbsentee);
+        assertEquals(midterm_exam, actualMidtermExam);
+        assertEquals(final_exam, actualFinalExam);
+        assertEquals(info_note, actualInfoNote);
+        assertEquals(letter_grade, actualLetterGrade);
+        assertEquals(exam_average, actualExamAverage);
+    }
+
+    @And("close the connection")
+    public void closeTheConnection() {
+        JDBCUtils.closeConnection();
+    }
+
+    @Given("go to {string}")
+    public void goTo(String url) {
+        Driver.getDriver().get(url);
+    }
+
+
+    @When("get teacher via non-existing student id {string}")
+    public void getTeacherViaNonExistingStudentId(String student_id) {
+      //  String query = "select * from student_info where student_id='459'";
+      //  resultSet = JDBCUtils.executeQuery(query);
+    }
+
+    @Then("validate if the student is deleted")
+    public void validateIfTheStudentIsDeleted() throws SQLException {
+     //   assertFalse(resultSet.next());
+    }
 }

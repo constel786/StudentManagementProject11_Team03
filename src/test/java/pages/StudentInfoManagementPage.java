@@ -73,7 +73,7 @@ public class StudentInfoManagementPage {
     public WebElement jessiePinkmanField;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[4]/td[1]/span")
-    public WebElement aliCanNameField;
+    public WebElement aliVeliNameField;
 
     @FindBy(xpath = "(//td/span/button[@type='button'])[1]")
     public WebElement editButton1;
