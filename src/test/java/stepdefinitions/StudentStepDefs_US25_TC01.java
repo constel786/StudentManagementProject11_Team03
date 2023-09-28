@@ -1,7 +1,9 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.ManagementSchoolHomePage;
 import pages.StudentManagementPage;
@@ -9,10 +11,17 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.WaitUtils;
 
+import java.sql.*;
+
+import static org.junit.Assert.assertEquals;
+
 public class StudentStepDefs_US25_TC01 {
     ManagementSchoolHomePage managementSchoolHomePage = new ManagementSchoolHomePage();
 
     StudentManagementPage studentManagementPage = new StudentManagementPage();
+
+    Connection connection;
+    ResultSet resultSet;
 
     @Given("admin navigates to {string}")
     public void admin_navigates_to(String string) {
@@ -58,7 +67,7 @@ public class StudentStepDefs_US25_TC01 {
 
     @When("enter student Surname")
     public void enter_student_surname() {
-        studentManagementPage.studentsurname.sendKeys("Itadori");
+        studentManagementPage.studentsurname.sendKeys("Yuji");
 
     }
 
@@ -70,7 +79,9 @@ public class StudentStepDefs_US25_TC01 {
 
     @When("enter student Email")
     public void enter_student_email() {
-        studentManagementPage.studentemail.sendKeys("itadori@gmail.com");
+        studentManagementPage.studentemail.sendKeys("Itadori@gmail.com");
+
+
 
     }
 
@@ -95,7 +106,7 @@ public class StudentStepDefs_US25_TC01 {
 
     @And("enter student valid SSN")
     public void enterStudentValidSSN() {
-        studentManagementPage.studentssnNumber.sendKeys("989-73-2617");
+        studentManagementPage.studentssnNumber.sendKeys("876-71-2618");
 
     }
 
@@ -127,6 +138,57 @@ public class StudentStepDefs_US25_TC01 {
         studentManagementPage.studentSubmit.click();
 
     }
+
+
+    @Given("connect to database")
+    public void connect_to_database() throws SQLException {
+      connection = DriverManager.getConnection("jdbc:postgresql://managementonschools.com:5432/school_management","select_user","43w5ijfso");
+
+    }
+    @When("get student via name {string}")
+    public void get_student_via_name(String name) throws SQLException {
+        Statement statement = connection.createStatement();
+        String query = "select * from student where name = 'Yuji'";
+        resultSet = statement.executeQuery(query);
+        resultSet.next();
+        System.out.println(resultSet.getString(6));
+
+    }
+    @Then("validate username {string} birth_day {string} birth_place {string} gender {string} name {string} phone_number {string} ssn  {string} surname {string} fathername {string} mothername {string}")
+    public void validate_username_birth_day_birth_place_gender_name_phone_number_ssn_surname_fathername_mothername(String username, String birth_day , String birth_place, String gender, String name, String phone_number, String ssn, String surname, String fathername, String mothername) throws SQLException {
+        String actualUsername = resultSet.getString("username");
+        String actualBirth_day = resultSet.getString("birth_day");
+        String actualBirth_place = resultSet.getString("birth_place");
+        String actualgender = resultSet.getString("gender");
+        String actualname = resultSet.getString("name");
+        String actualPhone_number= resultSet.getString("phone_number");
+        String actualSsn = resultSet.getString("ssn");
+        String actualsurname = resultSet.getString("surname");
+        String actualfathername = resultSet.getString("father_name");
+        String actualmothername = resultSet.getString("mother_name");
+
+
+        assertEquals(username,actualUsername);
+        assertEquals(birth_day,actualBirth_day);
+        assertEquals(birth_place, actualBirth_place);
+        assertEquals(gender, actualgender);
+        assertEquals(name,actualname);
+        assertEquals(phone_number,actualPhone_number);
+        assertEquals(ssn,actualSsn);
+        assertEquals(surname,actualsurname);
+        assertEquals(fathername,actualfathername);
+        assertEquals(mothername,actualmothername);
+
+    }
+    @Then("close the connection")
+    public void close_the_connection() throws SQLException {
+        resultSet.close();
+        connection.close();
+
+    }
+
+
+
 
 
 

@@ -24,6 +24,17 @@ Feature: Admin should be able to add teacher.
     And enter teacher with required credentials Password
     And click on Submit Button
 
+  @DataBase_Test2
+  Scenario Outline: Validate registered user on database
+    Given connect to database for teacher
+    When get teacher via name "<name>"
+    Then validate for teacher username "<username>" birth_day "<birth_day>" birth_place "<birth_place>" gender "<gender>" name "<name>" phone_number "<phone_number>" ssn  "<ssn>" surname "<surname>"
+    And close connection
+    Examples:
+      | name | username | birth_day  | birth_place | gender | phone_number | ssn         | surname |
+      | Gojo | gojos    | 1999-09-09 | jpn         | 1      | 231-879-5678 | 789-34-8888 | hriw    |
+
+
 
 
 

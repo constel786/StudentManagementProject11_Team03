@@ -23,3 +23,16 @@ Feature: Admin should be able to add a student.
     And enter student Mother Name
     And enter student Password with required credentials
     And click on student Submit Button
+
+    @DataBase_Test
+    Scenario Outline: Validate registered user on database
+      Given connect to database
+      When get student via name "<name>"
+      Then validate username "<username>" birth_day "<birth_day>" birth_place "<birth_place>" gender "<gender>" name "<name>" phone_number "<phone_number>" ssn  "<ssn>" surname "<surname>" fathername "<fathername>" mothername "<motherame>"
+      And close the connection
+      Examples:
+        | name | username | birth_day  | birth_place | gender | phone_number | ssn         | surname | fathername | motherame |
+        | Yuji | spryuji  | 2001-10-03 | Japan       | 0      | 899-567-2893 | 876-71-2618 | Itadori | dadyuji    | momyuji   |
+
+
+

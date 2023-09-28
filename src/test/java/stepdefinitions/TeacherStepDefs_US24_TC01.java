@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.Select;
 import pages.ManagementSchoolHomePage;
@@ -13,11 +14,17 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.WaitUtils;
 
+import java.sql.*;
+
+import static org.junit.Assert.assertEquals;
+
 public class TeacherStepDefs_US24_TC01 {
 
 
     ManagementSchoolHomePage managementSchoolHomePage = new ManagementSchoolHomePage();
     TeacherManagementPage teacherManagementPage = new TeacherManagementPage();
+    Connection connection;
+    ResultSet resultSet;
 
     protected static ExtentReports extentReports;
     protected static ExtentSparkReporter extentSparkReporter;
@@ -137,6 +144,51 @@ public class TeacherStepDefs_US24_TC01 {
         WaitUtils.waitFor(2);
         teacherManagementPage.submitTeacher.click();
     }
+
+
+    @Given("connect to database for teacher")
+    public void connect_to_database_for_teacher() throws SQLException {
+     connection = DriverManager.getConnection("jdbc:postgresql://managementonschools.com:5432/school_management","select_user","43w5ijfso");
+
+    }
+    @When("get teacher via name {string}")
+    public void get_teacher_via_name(String name) throws SQLException {
+        Statement statement = connection.createStatement();
+        String query = "select * from teacher where name = 'Gojo'";
+        resultSet = statement.executeQuery(query);
+        resultSet.next();
+
+    }
+    @Then("validate for teacher username {string} birth_day {string} birth_place {string} gender {string} name {string} phone_number {string} ssn  {string} surname {string}")
+    public void validate_for_teacher_username_birth_day_birth_place_gender_name_phone_number_ssn_surname(String username, String birth_day, String birth_place, String gender, String name, String phone_number, String ssn, String surname) throws SQLException {
+        String actualUsername = resultSet.getString("username");
+        String actualBirth_day = resultSet.getString("birth_day");
+        String actualBirth_place = resultSet.getString("birth_place");
+        String actualgender = resultSet.getString("gender");
+        String actualname = resultSet.getString("name");
+        String actualPhone_number= resultSet.getString("phone_number");
+        String actualSsn = resultSet.getString("ssn");
+        String actualsurname = resultSet.getString("surname");
+
+        assertEquals(username,actualUsername);
+        assertEquals(birth_day,actualBirth_day);
+        assertEquals(birth_place, actualBirth_place);
+        assertEquals(gender, actualgender);
+        assertEquals(name,actualname);
+        assertEquals(phone_number,actualPhone_number);
+        assertEquals(ssn,actualSsn);
+        assertEquals(surname,actualsurname);
+    }
+    @Then("close connection")
+    public void close_connection() throws SQLException {
+        resultSet.close();
+        connection.close();
+
+    }
+
+
+
+
 
 
 
