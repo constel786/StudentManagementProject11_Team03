@@ -12,7 +12,10 @@ public class MeetStepDefsUS_20 {
     public void user_clicks_on_home_page_login_button() {
         meetManagementPage.login.click();
         WaitUtils.waitFor(1);
-    }
+    } @And("user clicks on the submit button")
+    public void userClicksOnTheSubmitButton() {
+        JSUtils.clickWithTimeoutByJS(meetManagementPage.Submit);
+
         meetManagementPage.date.sendKeys(day_of_meet);
         WaitUtils.waitFor(4);
 
@@ -23,11 +26,12 @@ public class MeetStepDefsUS_20 {
         meetManagementPage.selectStopTime.sendKeys(stop_time);
         WaitUtils.waitFor(4);
 
-    @And("user clicks on the submit button")
-    public void userClicksOnTheSubmitButton() {
-        JSUtils.clickWithTimeoutByJS(meetManagementPage.Submit);
+        @And("user clicks on the submit button")
+        public void userClicksOnTheSubmitButton () {
+            JSUtils.clickWithTimeoutByJS(meetManagementPage.Submit);
 
-        WaitUtils.waitFor(2);
+            WaitUtils.waitFor(2);
 
 
+        }
     }
