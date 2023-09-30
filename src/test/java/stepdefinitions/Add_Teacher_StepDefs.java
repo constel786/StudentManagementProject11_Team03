@@ -8,11 +8,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.Add_Admin_Page;
 import pages.Add_Teacher_Page;
 import pages.ManagementonSchoolHomePage;
-import utilities.BrowserUtils;
 import utilities.Driver;
 public class Add_Teacher_StepDefs {
     Add_Teacher_Page addTeacherPage = new Add_Teacher_Page();
