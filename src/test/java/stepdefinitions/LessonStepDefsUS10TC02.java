@@ -4,7 +4,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.LessonPage;
 import pages.ManagementonSchoolHomePage;

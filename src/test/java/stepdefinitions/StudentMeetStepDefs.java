@@ -1,27 +1,11 @@
 package stepdefinitions;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.EditStudentInfoPage;
 import pages.ManagementonSchoolHomePage;
-import pages.MeetManagementPage;
-import pages.StudentInfoManagementPage;
 import utilities.*;
-
-import javax.swing.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class StudentMeetStepDefs {
 

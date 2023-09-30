@@ -6,7 +6,6 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.Select;
 import pages.ManagementSchoolHomePage;
 import pages.TeacherManagementPage;
 import utilities.ConfigReader;

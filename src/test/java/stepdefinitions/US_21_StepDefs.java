@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import com.mongodb.client.model.geojson.LineString;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +13,6 @@ import utilities.Driver;
 import utilities.JSUtils;
 import utilities.WaitUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 

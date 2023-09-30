@@ -2,16 +2,10 @@ package stepdefinitions;
 
 import io.cucumber.java.en.And;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import pages.AdminManagementPage;
 import pages.GuestUserPage;
 import pages.ManagementonSchoolHomePage;
-import utilities.Driver;
 import utilities.WaitUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AdminEditsGuestListStepDefs {
 
