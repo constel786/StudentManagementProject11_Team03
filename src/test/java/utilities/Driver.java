@@ -24,7 +24,7 @@ public class Driver {
     //    creating private constructor
     private Driver(){}
     //    creating a thread safe variable. type of the variable is WebDriver.So every thread will have its own copy of the variable
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     //    getDriver method is used to access the class instance that is WebDriver.
     //    This method will return a copy of the driverThreadLocal for each thread during parallel testing
     public static WebDriver getDriver() {

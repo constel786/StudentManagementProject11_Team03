@@ -6,12 +6,20 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class LessonPage {
+
+
     public LessonPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "controlled-tab-example-tab-lessonsList")
+    @FindBy(xpath = "(//input[@id='compulsory']")
+    public WebElement compulsoryCheckbox;
+
+    @FindBy(xpath = "(//button[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lesson;
+
+    @FindBy(xpath = "(//input[@id='creditScore']")
+    public WebElement creditScore;
 
     @FindBy(xpath = "(//i[@class='fa-solid fa-trash'])[1]")
     public WebElement trashIcon;
@@ -51,4 +59,12 @@ public class LessonPage {
 
     @FindBy(xpath = "(//tbody[@class='table-group-divider'])[4]")
     public WebElement createdLessonList;
+
+    @FindBy(xpath = "//input[@id='lessonName']")
+    public WebElement lessonName;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[2]")
+    public WebElement successMessage;
+
 }
+

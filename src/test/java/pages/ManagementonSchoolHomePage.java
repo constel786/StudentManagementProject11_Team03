@@ -13,7 +13,7 @@ public class ManagementonSchoolHomePage {
 
 // ----------------LOGIN-------------------
     @FindBy(xpath = "//*[@id=\"root\"]/div/header/div[1]/div/div/div[2]/a[2]")
-    public WebElement login;
+    public static WebElement login;
 
     @FindBy(xpath = "//input[@id='username']")
     public WebElement userNameLogin;

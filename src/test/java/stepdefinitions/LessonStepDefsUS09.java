@@ -48,9 +48,6 @@ public class LessonStepDefsUS09 {
 
 
 
-
-
-
     //US09 TC02
     @When("click on one of the trash icon")
     public void click_on_one_of_the_trash_icon() {
